@@ -7,10 +7,13 @@
  * 1차-A(indexPriority === 1 && contentStatus === 'ready') 항목만 getStaticPaths 대상이 된다.
  * draft / noindex 항목은 페이지를 만들되 robots noindex 메타를 삽입한다.
  */
-import type { LifeArea, UseCaseData, ChecklistItem, Province } from './types';
+import type { LifeArea, DistrictData, UseCaseData, ChecklistItem, Province } from './types';
 import seoulLifeAreas from '../data/seoul/life-areas.json';
 import gyeonggiLifeAreas from '../data/gyeonggi/life-areas.json';
 import incheonLifeAreas from '../data/incheon/life-areas.json';
+import seoulDistricts from '../data/seoul/districts.json';
+import gyeonggiDistricts from '../data/gyeonggi/districts.json';
+import incheonDistricts from '../data/incheon/districts.json';
 import useCasesData from '../data/common/use-cases.json';
 import checklistData from '../data/common/checklists.json';
 
@@ -83,3 +86,39 @@ export const PROVINCE_LABEL: Record<Province, string> = {
 export function getLifeAreaCount(province: Province): number {
   return getReadyLifeAreas(province).length;
 }
+
+/* ==========================================================================
+   행정구·시군 (District) 데이터
+   ========================================================================== */
+
+/** 수도권 행정구·시군 전체 (서울 25 + 경기 31 + 인천 10) */
+const districtsByProvince: Record<Province, DistrictData[]> = {
+  seoul: seoulDistricts as DistrictData[],
+  gyeonggi: gyeonggiDistricts as DistrictData[],
+  incheon: incheonDistricts as DistrictData[],
+};
+
+/** 특정 광역단체의 행정구 목록 */
+export function getDistricts(province: Province): DistrictData[] {
+  return districtsByProvince[province].filter(
+    (d) => d.contentStatus === 'ready'
+  );
+}
+
+/** slug로 행정구 조회 */
+export function getDistrict(province: Province, slug: string): DistrictData | undefined {
+  return districtsByProvince[province].find((d) => d.slug === slug);
+}
+
+/** 특정 행정구의 행정동 목록 반환 (dongs 필드) */
+export function getDongsByDistrict(province: Province, districtSlug: string): string[] {
+  const district = getDistrict(province, districtSlug);
+  return district?.dongs ?? [];
+}
+
+/** 행정동 슬러그를 표시명으로 변환 (예: yeoksam-dong → 역삼동) */
+export function dongSlugToName(slug: string): string {
+  // 슬러그에서 -dong, -eup, -myeon 제거 후 한국어 동명 매핑
+  return slug.replace(/-/g, ' ');
+}
+

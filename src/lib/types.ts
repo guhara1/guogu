@@ -90,6 +90,21 @@ export interface DistrictData extends BaseRegionData {
   representativeLifeAreas?: string[]; // 대표 생활권
   representativeDongs?: string[]; // 대표 행정동/읍면동
   nearbyStationsData?: string[]; // 대표 역세권
+  dongs?: string[]; // 해당 구/시군의 행정동 슬러그 목록
+  body?: string; // 본문
+  faq?: FAQItem[];
+}
+
+/** 행정동·읍면동 데이터 (admin-dong) */
+export interface AdminDongData extends BaseRegionData {
+  type: 'admin-dong';
+  parent: string; // 소속 행정구/시군 slug
+  dongType?: 'dong' | 'eup' | 'myeon'; // 동/읍/면
+  nearbyStations?: string[];
+  nearbyAreas?: string[];
+  nearbyRegions?: string[];
+  relatedLifeArea?: string;
+  body?: string;
   faq?: FAQItem[];
 }
 
