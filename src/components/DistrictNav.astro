@@ -1,0 +1,89 @@
+---
+/**
+ * 행정구 서브 메뉴 (지역 전용 네비게이션)
+ * 각 행정구 페이지 상단에 노출. "출장마사지" 키워드 반복 금지 (스펙 준수)
+ *
+ * 구성: 홈 / 예약 전 확인 / 생활권 / 행정동 / 지하철역 / 이용 장소 / 문의
+ */
+import type { Province } from '../lib/types';
+
+interface Props {
+  province: Province;
+  districtSlug: string;      // 예: gangnam-gu
+  districtName: string;      // 예: 강남구
+  active?: string;           // 현재 활성 메뉴 (home/life/dong/station/use/check)
+}
+
+const { province, districtSlug, districtName, active = '' } = Astro.props;
+
+const basePath = `/${province}/${districtSlug}`;
+
+const menuItems = [
+  { key: 'home',     label: `${districtName} 홈`, href: `${basePath}/` },
+  { key: 'check',    label: '예약 전 확인',      href: `${basePath}/#checklist` },
+  { key: 'life',     label: '생활권 안내',        href: `${basePath}/#life` },
+  { key: 'dong',     label: '행정동 안내',        href: `${basePath}/#dong` },
+  { key: 'station',  label: '지하철역 안내',      href: `${basePath}/#station` },
+  { key: 'use',      label: '이용 장소',          href: `${basePath}/#use` },
+  { key: 'contact',  label: '문의하기',           href: '/contact/' },
+];
+---
+
+<nav class="district-nav" aria-label={`${districtName} 메뉴`}>
+  <div class="container">
+    <div class="district-nav__inner">
+      {menuItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={['district-nav__item', { 'is-active': item.key === active }]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<style>
+  .district-nav {
+    position: sticky;
+    top: 68px;
+    z-index: 90;
+    background: rgba(10, 14, 26, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .district-nav::-webkit-scrollbar { display: none; }
+  .district-nav__inner {
+    display: flex;
+    gap: 4px;
+    padding: 10px 0;
+    white-space: nowrap;
+  }
+  .district-nav__item {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: var(--radius-xs);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text-soft);
+    border: 1px solid transparent;
+    transition: all var(--transition);
+    flex-shrink: 0;
+  }
+  .district-nav__item:hover {
+    color: var(--color-gold-bright);
+    background: var(--color-bg-card);
+    border-color: var(--color-border);
+  }
+  .district-nav__item.is-active {
+    color: var(--color-gold-bright);
+    background: var(--color-gold-glow);
+    border-color: var(--color-border-gold);
+  }
+</style>
