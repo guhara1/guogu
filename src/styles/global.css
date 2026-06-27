@@ -364,6 +364,37 @@ ul, ol { list-style: none; }
   color: var(--color-gold-bright);
   border: 1px solid var(--color-border-gold);
 }
+/* 클릭 가능한 행정동 태그 (내부 링크) */
+.tag-link {
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+.tag-link:hover {
+  background: var(--color-gold-glow);
+  color: var(--color-gold-bright);
+  border-color: var(--color-border-gold);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   카드 변형 (동 페이지용)
+   ========================================================================== */
+.card-grid-2 {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+.card-static {
+  cursor: default;
+}
+.card-static::before,
+.card-static .card__link { display: none; }
+.card-static:hover {
+  transform: none;
+  border-color: var(--color-border);
+}
 
 /* ==========================================================================
    본문 콘텐츠

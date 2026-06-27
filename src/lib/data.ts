@@ -116,9 +116,72 @@ export function getDongsByDistrict(province: Province, districtSlug: string): st
   return district?.dongs ?? [];
 }
 
-/** 행정동 슬러그를 표시명으로 변환 (예: yeoksam-dong → 역삼동) */
-export function dongSlugToName(slug: string): string {
+/**
+ * 한국어 동명 → URL 안전 슬러그 변환
+ * 로마자 표기 대신 일관성·역추적성을 위해 번호 인코딩 사용
+ * (예: 역삼동 → dong-1, 논현동 → dong-2)
+ * 표시명은 dongSlugToName()로 원복 가능 (동 데이터 배열에서 인덱스로 조회)
+ */
+
+/** 동 슬러그 → 동명 변환 (특정 구 내에서 역추적) */
+export function dongSlugToName(
+  slug: string,
+  province?: Province,
+  districtSlug?: string
+): string {
+  // dong-{n} 패턴이면 구 데이터에서 인덱스로 역추적
+  const match = /^dong-(\d+)$/.exec(slug);
+  if (match && province && districtSlug) {
+    const idx = parseInt(match[1], 10) - 1;
+    const dongs = getDongsByDistrict(province, districtSlug);
+    return dongs[idx] ?? slug;
+  }
+  // 폴백: 범용 (슬러그 자체가 동명일 때)
   return slug.replace(/-/g, ' ');
+}
+
+/**
+ * 특정 구의 모든 행정동을 {name, slug} 형태로 반환 (페이지 생성용)
+ * 동명은 중복될 수 있으므로 인덱스 기반 슬러그 사용
+ */
+export function getDongList(
+  province: Province,
+  districtSlug: string
+): { name: string; slug: string }[] {
+  const dongs = getDongsByDistrict(province, districtSlug);
+  return dongs.map((name, idx) => ({
+    name,
+    slug: `dong-${idx + 1}`,
+  }));
+}
+
+/** 특정 동 슬러그로 단일 동 조회 */
+export function getDong(
+  province: Province,
+  districtSlug: string,
+  dongSlug: string
+): { name: string; slug: string } | undefined {
+  return getDongList(province, districtSlug).find((d) => d.slug === dongSlug);
+}
+
+/**
+ * 한국어 조사 자동 처리
+ * @param word 단어 (예: '역삼동')
+ * @param pp 페어 조사 (예: '은는' → 받침 O '은', 받침 X '는')
+ *           지원: '은는','이가','을를','과와','로으로'
+ * @returns 단어 + 알맞은 조사 (예: '역삼동은')
+ */
+export function postposition(word: string, pp: string): string {
+  if (!word) return pp;
+  const last = word.charCodeAt(word.length - 1) - 0xac00;
+  const hasBatchim = last % 28 !== 0;
+  // '로으로' 특수: 받침이 ㄹ이면 '로'
+  if (pp === '로으로') {
+    const jong = last % 28;
+    if (jong === 8) return word + '로'; // ㄹ 받침
+    return hasBatchim ? word + '으로' : word + '로';
+  }
+  return hasBatchim ? word + pp[0] : word + pp[1];
 }
 
 /** 역세권 슬러그를 한국어 역명으로 변환 */
