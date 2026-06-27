@@ -23,7 +23,8 @@ interface Props {
 const { title, description, path, noindex = false, schemas = [] } = Astro.props;
 
 const canonical = absUrl(path);
-const ogImage = absUrl('/og-image.png'); // TODO: 실제 OG 이미지 추가
+// OG 이미지: 50KB 이하 WebP (검색 썸네일 최적화)
+const ogImage = absUrl('/og-image.webp');
 const keywords = [siteConfig.focusKeyword, ...siteConfig.subKeywords].join(', ');
 ---
 
@@ -48,6 +49,11 @@ const keywords = [siteConfig.focusKeyword, ...siteConfig.subKeywords].join(', ')
 <meta property="og:url" content={canonical} />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:secure_url" content={ogImage} />
+<meta property="og:image:type" content="image/webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`${siteConfig.name} - 프리미엄 출장 마사지`} />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
