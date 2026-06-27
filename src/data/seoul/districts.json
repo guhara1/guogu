@@ -14,9 +14,9 @@
     "lastUpdated": "2026-06-27",
     "description": "강남역·테헤란로 중심의 서울 대표 업무·상권 지구",
     "representativeLifeAreas": ["gangnam-yeoksam"],
-    "representativeDongs": ["yeoksam-dong", "samseong-dong", "cheonho-dong"],
+    "representativeDongs": ["역삼동", "삼성동", "논현동"],
     "nearbyStationsData": ["gangnam-station", "yeoksam-station"],
-    "dongs": ["yeoksam-dong", "nonhyeon-dong", "samseong-dong", "daechi-dong", "dogok-dong", "seolleung-dong", "suseo-dong", "apgujeong-dong", "cheongdam-dong", "irwon-dong", "jaegeun-dong", "gaepo-dong", "segok-dong", "ilwon-dong", "sujung-dong"],
+    "dongs": ["역삼동", "논현동", "삼성동", "대치동", "도곡동", "선릉동", "수서동", "압구정동", "청담동", "일원동", "일원본동", "수서동", "개포동", "세곡동", "자곡동", "율현동"],
     "body": "강남구는 서울의 대표적인 업무·상업 중심지로, 강남역과 테헤란로를 중심으로 대형 오피스텔, 비즈니스 호텔, 상업 시설이 밀집해 있습니다. 직장인들의 퇴근 후 건강 관리와 체형 관리 수요가 꾸준히 발생하는 지역입니다."
   },
   {
@@ -34,9 +34,9 @@
     "lastUpdated": "2026-06-27",
     "description": "서초동·법조타운·양재 일대의 법조·금융 업무 생활권",
     "representativeLifeAreas": ["gangnam-yeoksam"],
-    "representativeDongs": ["seocho-dong", "yangjae-dong", "banpo-dong"],
+    "representativeDongs": ["서초동", "양재동", "반포동"],
     "nearbyStationsData": ["seocho-station", "yangjae-station"],
-    "dongs": ["seocho-dong", "yangjae-dong", "ubang-dong", "banpo-dong", "bangbae-dong", "wonji-dong", "naegok-dong", "jaegeun-dong", "wonji-dong"]
+    "dongs": ["서초동", "양재동", "우면동", "반포동", "방배동", "원지동", "내곡동", "잠원동", "반포본동", "방배본동", "신원동", "양재동", "서초동"]
   },
   {
     "name": "송파구",
@@ -53,9 +53,9 @@
     "lastUpdated": "2026-06-27",
     "description": "잠실종합운동장·롯데월드·위례신도시 중심의 대규모 주거·상업 생활권",
     "representativeLifeAreas": ["jamsil-songpa"],
-    "representativeDongs": ["jamsil-dong", "munjeong-dong", "garak-dong"],
+    "representativeDongs": ["잠실동", "문정동", "가락동"],
     "nearbyStationsData": ["jamsil-station", "seokchon-station"],
-    "dongs": ["jamsil-dong", "sincheon-dong", "pungnap-dong", "cheonho-dong", "munjeong-dong", "jangji-dong", "garak-dong", "macheon-dong", "ogeum-dong", "songpa-dong", "samjeon-dong", "geoyeo-dong", "majang-dong", "wiri-dong"]
+    "dongs": ["잠실동", "신천동", "풍납동", "천호동", "문정동", "장지동", "가락동", "마천동", "오금동", "송파동", "삼전동", "거여동", "마장동", "위례동", "방이동", "석촌동"]
   },
   {
     "name": "마포구",
@@ -72,9 +72,9 @@
     "lastUpdated": "2026-06-27",
     "description": "홍대입구·합정·연남동 카페거리 중심의 상권·숙소 생활권",
     "representativeLifeAreas": ["hongdae-hapjeong"],
-    "representativeDongs": ["hongje-dong", "hapjeong-dong", "yeonnam-dong"],
+    "representativeDongs": ["서교동", "합정동", "연남동"],
     "nearbyStationsData": ["hongik-univ-station", "hapjeong-station"],
-    "dongs": ["aryangjin-dong", "daeheung-dong", "dogok-dong", "donggyo-dong", "hapjeong-dong", "hapollo-dong", "heukseok-dong", "hogae-dong", "hongje-dong", "jeonong-dong", "mapo-dong", "nosan-dong", "sangsu-dong", "seo-gyo-dong", "seogyo-dong", "sinsu-dong", "sinchon-dong", "yeonnam-dong", "yeomni-dong", "yonggang-dong"]
+    "dongs": ["아현동", "대흥동", "도화동", "동교동", "합정동", "합정동", "흑석동", "호암동", "마포동", "노고산동", "상수동", "서교동", "서강동", "신수동", "신촌동", "연남동", "염리동", "용강동", "중동", "창전동", "공덕동", "망원동", "성산동", "상암동"]
   },
   {
     "name": "영등포구",
@@ -91,9 +91,9 @@
     "lastUpdated": "2026-06-27",
     "description": "여의도 금융단지·영등포역 환승거점 중심의 서남부 상권·업무 생활권",
     "representativeLifeAreas": ["yeouido-yeongdeungpo"],
-    "representativeDongs": ["yeouido-dong", "yeongdeungpo-dong", "dangsan-dong"],
+    "representativeDongs": ["여의도동", "영등포동", "당산동"],
     "nearbyStationsData": ["yeouido-station", "yeongdeungpo-station"],
-    "dongs": ["yeouido-dong", "yeongdeungpo-dong", "yeongdeungpo-bondong", "dangsan-dong", "dangsan-bondong", "daerim-dong", "mullae-dong", "mun-gok-dong", "sinjeong-dong", "yangpyeong-dong", "yangpyeong-bondong"]
+    "dongs": ["여의도동", "영등포동", "영등포본동", "당산동", "당산본동", "대림동", "문래동", "문경동", "신정동", "양평동", "양평본동", "도림동", "신길동"]
   },
   {
     "name": "성동구",
@@ -110,9 +110,9 @@
     "lastUpdated": "2026-06-27",
     "description": "성수동 카페거리·서울숲·왕십리 환승센터 중심의 주거·상권 생활권",
     "representativeLifeAreas": ["seongsu-wangsimni"],
-    "representativeDongs": ["seongsu-dong", "wangsimni-dong", "eungbong-dong"],
+    "representativeDongs": ["성수동", "왕십리동", "금호동"],
     "nearbyStationsData": ["seongsu-station", "wangsimni-station"],
-    "dongs": ["seongsu-dong", "wangsimni-dong", "haengdang-dong", "eungbong-dong", "geumho-dong", "oksudong-dong", "masang-dong", "sagajeong-dong", "seongsu-dong", "doul-dong", "yongdu-dong"]
+    "dongs": ["성수동", "왕십리동", "행당동", "응봉동", "금호동", "옥수동", "마장동", "사가정동", "도선동", "용답동", "송정동", "모진동"]
   },
   {
     "name": "용산구",
@@ -129,9 +129,9 @@
     "lastUpdated": "2026-06-27",
     "description": "용산역·서울역 철도거점·이태원 외국인 생활권 중심의 복합 생활권",
     "representativeLifeAreas": ["yongsan-seoul-station"],
-    "representativeDongs": ["yongsan-dong", "hannam-dong", "itaewon-dong"],
+    "representativeDongs": ["용산동", "한남동", "이태원동"],
     "nearbyStationsData": ["yongsan-station", "seoul-station"],
-    "dongs": ["yongsan-dong", "itaewon-dong", "hannam-dong", "wonhyoro-dong", "cheongpa-dong", "wonseo-dong", "hyochang-dong", "dokseodang-ro", "namyeong-dong", "bohyeon-dong"]
+    "dongs": ["용산동", "이태원동", "한남동", "원효로동", "청파동", "원서동", "효창동", "문배동", "남영동", "보광동", "주성동", "동빙고동", "서빙고동"]
   },
   {
     "name": "광진구",
@@ -148,9 +148,9 @@
     "lastUpdated": "2026-06-27",
     "description": "건대입구역·아차산역 중심의 동부 상권·주거 생활권",
     "representativeLifeAreas": ["seongsu-wangsimni"],
-    "representativeDongs": ["jayang-dong", "guui-dong", "hwayang-dong"],
+    "representativeDongs": ["자양동", "구의동", "화양동"],
     "nearbyStationsData": ["konkuk-univ-station", "achasan-station"],
-    "dongs": ["janghanpyeong-dong", "jayang-dong", "guui-dong", "hwayang-dong", "neung-dong", "gunjo-dong", "mojin-dong", "sejong-dong"]
+    "dongs": ["장한평동", "자양동", "구의동", "화양동", "능동", "군자동", "중곡동", "광장동", "모진동"]
   },
   {
     "name": "강서구",
@@ -167,9 +167,9 @@
     "lastUpdated": "2026-06-27",
     "description": "마곡지구·발산역·김포공항 인접권의 서강 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["magok-dong", "balsan-dong", "hwagok-dong"],
+    "representativeDongs": ["마곡동", "발산동", "화곡동"],
     "nearbyStationsData": ["magok-station", "balsan-station"],
-    "dongs": ["balsan-dong", "deungchon-dong", "dohwa-dong", "gayang-dong", "hwagok-dong", "hwagok-bondong", "jeung-myeon-dong", "naebalsan-dong", "naehwagok-dong", "naebang-dong", "ojang-dong", "sanghwasan-dong", "geumhwa-dong", "magok-dong", "jeongneung-dong"]
+    "dongs": ["발산동", "등촌동", "화곡동", "화곡본동", "가양동", "마곡동", "염창동", "내발산동", "내화곡동", "외발산동", "방화동", "개화동", "과해동", "오곡동", "오쇠동", "우장산동"]
   },
   {
     "name": "구로구",
@@ -186,9 +186,9 @@
     "lastUpdated": "2026-06-27",
     "description": "구로디지털단지·가산디지털단지 인접 산업·주거 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["guro-dong", "garibong-dong", "sindaebang-dong"],
+    "representativeDongs": ["구로동", "가리봉동", "신도림동"],
     "nearbyStationsData": ["guro-digital-complex-station", "gasan-digital-complex-station"],
-    "dongs": ["guro-dong", "garibong-dong", "gasan-dong", "cheonwang-dong", "hang-dong", "su-dong", "sindo-rim-dong", "singil-dong", "on-su-dong", "gaebong-dong"]
+    "dongs": ["구로동", "가리봉동", "가산동", "천왕동", "항동", "수동", "신도림동", "대림동", "온수동", "개봉동", "고척동", "궁동"]
   },
   {
     "name": "금천구",
@@ -205,9 +205,9 @@
     "lastUpdated": "2026-06-27",
     "description": "가산디지털단지·시흥동·독산동 중심의 남서부 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["gasan-dong", "doksan-dong", "siheung-dong"],
+    "representativeDongs": ["가산동", "독산동", "시흥동"],
     "nearbyStationsData": ["gasan-digital-complex-station", "geumcheon-gu-office-station"],
-    "dongs": ["gasan-dong", "doksan-dong", "siheung-dong"]
+    "dongs": ["가산동", "독산동", "시흥동", "시흥본동"]
   },
   {
     "name": "관악구",
@@ -224,9 +224,9 @@
     "lastUpdated": "2026-06-27",
     "description": "신림동·서울대입구역·낙성대 중심의 남부 대규모 주거 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["sillim-dong", "bongcheon-dong", "nangok-dong"],
+    "representativeDongs": ["신림동", "봉천동", "난곡동"],
     "nearbyStationsData": ["sillim-station", "seoul-national-univ-station"],
-    "dongs": ["sillim-dong", "bongcheon-dong", "nangok-dong", "namhyeon-dong", "seonghyeon-dong", "sinwon-dong", "joongang-dong", "cheongnyong-dong", "nakseongdae-dong", "daew-dong", "hang-dong"]
+    "dongs": ["신림동", "봉천동", "난곡동", "난향동", "서원동", "신원동", "남현동", "신사동", "조원동", "미성동", "난계동", "인헌동", "청룡동", "성현동", "청림동", "행운동", "은천동", "낙성대동"]
   },
   {
     "name": "동작구",
@@ -243,9 +243,9 @@
     "lastUpdated": "2026-06-27",
     "description": "사당동·노량진·상도 일대의 중서부 주거·교육 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["sadang-dong", "noryangjin-dong", "sangdo-dong"],
+    "representativeDongs": ["사당동", "노량진동", "상도동"],
     "nearbyStationsData": ["sadang-station", "noryangjin-station"],
-    "dongs": ["sadang-dong", "noryangjin-dong", "sangdo-dong", "sangdo-bondong", "heukseok-dong", "daebang-dong", "dongjak-dong", "sasa-dong", "bon-dong", "joongang-dong", "cheongnyong-dong"]
+    "dongs": ["사당동", "노량진동", "상도동", "상도본동", "흑석동", "대방동", "동작동", "사육탑동", "본동", "신대방동", "신대방본동", "양녕로동"]
   },
   {
     "name": "양천구",
@@ -262,9 +262,9 @@
     "lastUpdated": "2026-06-27",
     "description": "목동신시가지·신정·신월 중심의 서남부 대규모 주거 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["mokdong-dong", "sinjeong-dong", "sinwol-dong"],
+    "representativeDongs": ["목동", "신정동", "신월동"],
     "nearbyStationsData": ["mokdong-station", "sinjeong-negeori-station"],
-    "dongs": ["mokdong-dong", "sinjeong-dong", "sinwol-dong", "neung-dong", "gayang-dong"]
+    "dongs": ["목동", "신정동", "신월동", "목본동", "신정본동", "등촌동", "화곡동", "화곡본동", "내발산동"]
   },
   {
     "name": "은평구",
@@ -281,9 +281,9 @@
     "lastUpdated": "2026-06-27",
     "description": "연신내·불광동·응암동 중심의 서북부 주거 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["yeonsinnae-dong", "bulgwang-dong", "eungam-dong"],
+    "representativeDongs": ["연신내동", "불광동", "응암동"],
     "nearbyStationsData": ["yeonsinnae-station", "bulgwang-station"],
-    "dongs": ["yeonsinnae-dong", "bulgwang-dong", "eungam-dong", "nokbeon-dong", "sinshe-dong", "jeongneung-dong", "gusan-dong", "galhyeon-dong", "bukak-dong", "ok-dong", "sane-dong"]
+    "dongs": ["연신내동", "불광동", "응암동", "녹번동", "신사동", "증산동", "구산동", "갈현동", "불광본동", "역촌동", "대조동", "구산동", "진관동"]
   },
   {
     "name": "노원구",
@@ -300,9 +300,9 @@
     "lastUpdated": "2026-06-27",
     "description": "상계동·중계동·하계동 중심의 북동부 대규모 주거 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["sanggye-dong", "junggye-dong", "chang-dong"],
+    "representativeDongs": ["상계동", "중계동", "하계동"],
     "nearbyStationsData": ["nowon-station", "sanggye-station"],
-    "dongs": ["sanggye-dong", "junggye-dong", "hagye-dong", "chang-dong", "gongneung-dong", "wolgye-dong", "joongrae-dong", "sanggye-dong", "deongneung-dong"]
+    "dongs": ["상계동", "중계동", "하계동", "창동", "공릉동", "월계동", "중계본동", "상계본동", "월계본동", "공릉본동", "하계본동", "노원본동"]
   },
   {
     "name": "중랑구",
@@ -319,9 +319,9 @@
     "lastUpdated": "2026-06-27",
     "description": "면목동·상봉동·중화동 중심의 동북부 주거 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["myeonmok-dong", "sangbong-dong", "junghwa-dong"],
+    "representativeDongs": ["면목동", "상봉동", "중화동"],
     "nearbyStationsData": ["sangbong-station", "myeonmok-station"],
-    "dongs": ["myeonmok-dong", "sangbong-dong", "junghwa-dong", "muk-dong", "mang-u-dong", "sinnae-dong", "nangok-dong", "nangok-bondong"]
+    "dongs": ["면목동", "상봉동", "중화동", "묵동", "망우동", "신내동", "면목본동", "중화본동", "묵동본동", "망우본동"]
   },
   {
     "name": "종로구",
@@ -338,9 +338,9 @@
     "lastUpdated": "2026-06-27",
     "description": "종로·광화문·청계천 중심의 도심 관광·업무·호텔 생활권",
     "representativeLifeAreas": ["jongno-gwanghwamun"],
-    "representativeDongs": ["jongno-dong", "sogyeok-dong", "cheongjin-dong"],
+    "representativeDongs": ["종로동", "사직동", "청진동"],
     "nearbyStationsData": ["jongno-3-sam-ga-station", "gwanghwamun-station"],
-    "dongs": ["jongno-dong", "sogyeok-dong", "cheongjin-dong", "sajik-dong", "gyo-dong", "nango-dong", "jae-dong", "gyebo-dong", "wonseo-dong", "hyehwa-dong", "gye-dong", "changshin-dong", "hyoja-dong", "buam-dong", "pyeong-chang-dong", "samsang-dong", "bukak-dong", "seongbuk-dong"]
+    "dongs": ["종로동", "사직동", "청진동", "신문로동", "태평로동", "종로본동", "인사동", "낙원동", "경운동", "이화동", "혜화동", "교남동", "효자동", "부암동", "평창동", "무악동", "교남동", "창신동", "숭인동", "청운효자동", "사직동"]
   },
   {
     "name": "중구",
@@ -357,9 +357,9 @@
     "lastUpdated": "2026-06-27",
     "description": "명동·을지로·충무로 중심의 도심 관광·업무·호텔 생활권",
     "representativeLifeAreas": ["myeongdong-euljiro"],
-    "representativeDongs": ["myeongdong-dong", "euljiro-dong", "chungmu-ro-dong"],
+    "representativeDongs": ["명동", "을지로동", "충무로동"],
     "nearbyStationsData": ["myeongdong-station", "euljiro-ipeg-station"],
-    "dongs": ["myeongdong-dong", "euljiro-dong", "chungmu-ro-dong", "hwanghak-dong", "dunsan-dong", "changshin-dong", "gwanhun-dong", "junggyo-dong", "nangok-dong", "yongsan-dong", "pildong-dong", "jangchung-dong", "gongpyeong-dong", "dangsandong-dong", "sogong-dong", "seosomun-dong", "ssangnim-dong", "mok-dong", "mok-bondong"]
+    "dongs": ["명동", "을지로동", "충무로동", "황학동", "다산동", "신당동", "장충동", "광희동", "을지로동", "중림동", "신당동", "방산동", "신당제5동", "황학동", "무교동", "남대문로동", "봉래동", "남창동", "회현동", "남산동", "장충동", "광희동", "응봉동", "신당동", "다산동", "황학동", "중앙동", "무교동"]
   },
   {
     "name": "강동구",
@@ -376,9 +376,9 @@
     "lastUpdated": "2026-06-27",
     "description": "천호동·길동·명일동 중심의 동남부 주거·상권 생활권",
     "representativeLifeAreas": ["jamsil-songpa"],
-    "representativeDongs": ["cheonho-dong", "gildong-dong", "myeongil-dong"],
+    "representativeDongs": ["천호동", "길동", "명일동"],
     "nearbyStationsData": ["cheonho-station", "gildong-station"],
-    "dongs": ["cheonho-dong", "gildong-dong", "myeongil-dong", "sangil-dong", "sungnae-dong", "dunchon-dong", "sang-dong", "sangil-dong", "adeuk-dong", "myeongil-dong"]
+    "dongs": ["천호동", "길동", "명일동", "상일동", "성내동", "둔촌동", "암사동", "고덕동", "상일동", "명일동", "암사본동", "고덕제1동", "천호제1동", "천호제2동", "길동", "성내동", "둔촌동"]
   },
   {
     "name": "강북구",
@@ -395,9 +395,9 @@
     "lastUpdated": "2026-06-27",
     "description": "수유동·번동·우이동 중심의 북부 주거 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["suyu-dong", "beon-dong", "ui-dong"],
+    "representativeDongs": ["수유동", "번동", "우이동"],
     "nearbyStationsData": ["suyu-station", "mangwusu-station"],
-    "dongs": ["suyu-dong", "beon-dong", "ui-dong", "songcheon-dong", "sanggol-dong", "donui-dong", "insu-dong", "gireum-dong", "jian-dong", "samgaksan-dong"]
+    "dongs": ["수유동", "번동", "우이동", "송천동", "삼양동", "미아동", "인수동", "길음동", "창동", "번동", "수유본동", "우이동", "송천동", "미아동", "삼각산동", "삼양동", "보문동"]
   },
   {
     "name": "도봉구",
@@ -414,9 +414,9 @@
     "lastUpdated": "2026-06-27",
     "description": "쌍문동·창동·방학동 중심의 북부 주거 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["sangmun-dong", "chang-dong", "banghak-dong"],
+    "representativeDongs": ["쌍문동", "창동", "방학동"],
     "nearbyStationsData": ["sanggye-station", "dobong-station"],
-    "dongs": ["sangmun-dong", "chang-dong", "banghak-dong", "dobong-dong", "ssangmun-dong", "banghak-dong"]
+    "dongs": ["쌍문동", "창동", "방학동", "도봉동", "쌍문동", "방학동", "창동", "도봉본동", "쌍문본동", "방학본동", "도봉본동"]
   },
   {
     "name": "동대문구",
@@ -429,13 +429,13 @@
     "indexPriority": 1,
     "contentStatus": "ready",
     "canonicalUrl": "/seoul/dongdaemun-gu/",
-    "noindex":  false,
+    "noindex": false,
     "lastUpdated": "2026-06-27",
     "description": "청량리역·제기동·답십리 중심의 동북부 상권·주거 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["cheongnyangni-dong", "jaegi-dong", "dapsilli-dong"],
+    "representativeDongs": ["청량리동", "제기동", "답십리동"],
     "nearbyStationsData": ["cheongnyangni-station", "sinseol-dong-station"],
-    "dongs": ["cheongnyangni-dong", "jaegi-dong", "dapsilli-dong", "jeonnong-dong", "yongsin-dong", "imun-dong", "muk-dong", "jangann-dong", "bongrak-dong", "hwigyeong-dong", "nangok-dong", "junghwa-dong"]
+    "dongs": ["청량리동", "제기동", "답십리동", "전농동", "용신동", "이문동", "묵동", "장안동", "봉랑동", "휘경동", "신설동", "회기동", "용두동", "제기동", "답십리본동", "전농동", "이문동"]
   },
   {
     "name": "서대문구",
@@ -452,9 +452,9 @@
     "lastUpdated": "2026-06-27",
     "description": "신촌·홍은동·연희동 중심의 서북부 상권·주거 생활권",
     "representativeLifeAreas": ["jongno-gwanghwamun"],
-    "representativeDongs": ["sinchon-dong", "hong-eun-dong", "yeonhui-dong"],
+    "representativeDongs": ["신촌동", "홍은동", "연희동"],
     "nearbyStationsData": ["sinchon-station", "hongje-station"],
-    "dongs": ["sinchon-dong", "hong-eun-dong", "yeonhui-dong", "yeonseo-dong", "bukgajwa-dong", "chunghyeon-dong", "hongje-dong", "bongwon-dong", "daeheung-dong", "bongin-dong", "namgajwa-dong", "hun-dong", "gajwa-dong", "sinchon-dong", "bongwon-dong", "bonghak-dong"]
+    "dongs": ["신촌동", "홍은동", "연희동", "연서동", "북가좌동", "충현동", "홍제동", "봉원동", "대현동", "합동", "남가좌동", "천연동", "북아현동", "신촌동", "대신동", "연희동", "북가좌동"]
   },
   {
     "name": "성북구",
@@ -462,7 +462,7 @@
     "type": "district",
     "province": "seoul",
     "district": "seongbuk-gu",
-    "searchIntent": "성북구 출장마사지, 성북로 홈타이, 성북구 방운 마사지",
+    "searchIntent": "성북구 출장마사지, 성북로 홈타이, 성북구 방문 마사지",
     "contentFocus": "정릉, 안암, 돈암 주거·교육 생활권 중심",
     "indexPriority": 1,
     "contentStatus": "ready",
@@ -471,8 +471,8 @@
     "lastUpdated": "2026-06-27",
     "description": "정릉·안암·돈암·길음 중심의 북부 주거·교육 생활권",
     "representativeLifeAreas": [],
-    "representativeDongs": ["jeongneung-dong", "anam-dong", "donam-dong"],
+    "representativeDongs": ["정릉동", "안암동", "돈암동"],
     "nearbyStationsData": ["seongbuk-station", "anseong-station"],
-    "dongs": ["jeongneung-dong", "anam-dong", "donam-dong", "gireum-dong", "girin-dong", "jangwi-dong", "seongbuk-dong", "dongseon-dong", "suyu-dong", "sambang-dong", "wolgye-dong", "woljeong-dong", "wolgye-bondong", "changshin-dong", "bukak-dong", "samseong-dong"]
+    "dongs": ["정릉동", "안암동", "돈암동", "길음동", "길음본동", "장위동", "석관동", "성북동", "동선동", "보문동", "삼선동", "안암동", "정릉본동", "종암동", "월곡동", "월곡본동", "장위본동", "상월곡동", "하월곡동"]
   }
 ]

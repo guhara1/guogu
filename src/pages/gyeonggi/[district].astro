@@ -9,7 +9,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Checklist from '../../components/Checklist.astro';
 import PhoneCTA from '../../components/PhoneCTA.astro';
 import LifeAreaCard from '../../components/LifeAreaCard.astro';
-import { getDistricts, findLifeAreaBySlug, PROVINCE_LABEL } from '../../lib/data';
+import { getDistricts, findLifeAreaBySlug, PROVINCE_LABEL, stationLabel } from '../../lib/data';
 import type { DistrictData } from '../../lib/types';
 import { webPageSchema, breadcrumbSchema } from '../../lib/schema';
 
@@ -84,7 +84,7 @@ const relatedAreas = (district.representativeLifeAreas ?? [])
         <h2 class="section-title" style="font-size: 1.4rem;">대표 역세권</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 10px;">
           {district.nearbyStationsData.map((s) => (
-            <span class="tag tag-gold">{s.replace(/-/g, ' ')}</span>
+            <span class="tag tag-gold">{stationLabel(s)}</span>
           ))}
         </div>
       </section>
