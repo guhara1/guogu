@@ -19,6 +19,13 @@ Thumbs.db
 .vscode/
 .idea/
 
+# IndexNow 키 (외부 공개 키이나 저장소에서는 제외, 배포 시 public/ 에서 복사)
+.indexnow-key
+
+# Google Indexing API 서비스 계정 (절대 공개 금지 — 비밀키 포함)
+tools/google-service-account.json
+tools/*.json
+
 # 로그
 *.log
 npm-debug.log*
