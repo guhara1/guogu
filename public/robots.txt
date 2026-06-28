@@ -18,5 +18,5 @@ Allow: /
 Disallow: /*.css$
 Disallow: /*.js$
 
-Sitemap: https://zxking-massage.pages.dev/sitemap-index.xml
-Sitemap: https://zxking-massage.pages.dev/rss.xml
+Sitemap: https://guogu-5hy.pages.dev/sitemap-index.xml
+Sitemap: https://guogu-5hy.pages.dev/rss.xml

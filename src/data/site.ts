@@ -9,7 +9,7 @@ import type { SiteConfig } from '../lib/types';
 export const siteConfig: SiteConfig = {
   name: '간다GO',
   // astro.config.mjs 의 SITE_URL과 동일하게 유지
-  url: 'https://guogu.pages.dev',
+  url: 'https://guogu-5hy.pages.dev',
   title: '간다GO｜수도권 출장마사지·홈타이 방문 가능 지역 안내',
   // 80자 이내 디스크립션
   description:
@@ -61,12 +61,12 @@ export const siteConfig: SiteConfig = {
   // E-E-A'T 작성자 byline (Google 가이드라인 준수)
   author: {
     name: '간다GO 편집팀',
-    url: 'https://guogu.pages.dev/about/',
+    url: 'https://guogu-5hy.pages.dev/about/',
     jobTitle: '출장 마사지 방문 가능 지역 안내 에디터',
   },
   organization: {
     name: '간다GO',
-    url: 'https://guogu.pages.dev',
+    url: 'https://guogu-5hy.pages.dev',
     description:
       '수도권 출장마사지·홈타이 방문 가능 지역과 예약 전 확인사항을 안내합니다.',
   },
