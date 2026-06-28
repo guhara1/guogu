@@ -11,7 +11,7 @@ const year = new Date().getFullYear();
     <div class="site-footer__grid">
       <div>
         <div class="site-footer__logo">
-          <span class="gold-text">X 킹</span>마사지
+          <span class="gold-text">간다</span>GO
         </div>
         <p class="site-footer__desc">
           서울·경기·인천 수도권 출장마사지·홈타이 방문 가능 지역과 예약 전 확인사항을 안내합니다.
@@ -21,6 +21,26 @@ const year = new Date().getFullYear();
           <a href={`tel:${siteConfig.phoneTel}`} class="site-footer__phone">
             📞 {siteConfig.phoneDisplay}
           </a>
+        )}
+        {siteConfig.telegram && (
+          <div class="site-footer__cta-row">
+            <a
+              href={siteConfig.telegram}
+              class="btn btn-orange btn-sm"
+              target="_blank"
+              rel="noopener"
+            >
+              ✈ 웹사이트 제작문의
+            </a>
+            <a
+              href={siteConfig.telegram}
+              class="btn btn-orange btn-sm"
+              target="_blank"
+              rel="noopener"
+            >
+              🤝 제휴문의
+            </a>
+          </div>
         )}
       </div>
       <div>

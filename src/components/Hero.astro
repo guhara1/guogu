@@ -1,0 +1,189 @@
+---
+/**
+ * 재사용 히어로 섹션 — 바다/야자수 서머 테마
+ *
+ * 메인 페이지와 모든 지역/안내 페이지 허브 상단에 일관되게 사용.
+ * - 오션 블루 + 야자수 민트 + 선샤인 서머 그라데이션
+ * - 떠다니는 야자수 잎 SVG + 하단 파도 + 펄스 도트
+ * - 모바일에서 CTA가 세로 정렬되도록 글로벌 반응형과 연동
+ */
+import type { CTA } from '../lib/types';
+
+interface Props {
+  badge: string;
+  title: string;
+  highlight?: string;
+  subtitle: string;
+  ctas?: CTA[];
+  meta?: string[];
+  align?: 'center' | 'left';
+}
+
+const {
+  badge,
+  title,
+  highlight,
+  subtitle,
+  ctas = [],
+  meta = [],
+  align = 'left',
+} = Astro.props;
+
+const btnClass = (variant: string) =>
+  variant === 'mint'
+    ? 'btn btn-mint btn-lg'
+    : variant === 'ocean'
+      ? 'btn btn-ocean btn-lg'
+      : variant === 'outline'
+        ? 'btn btn-outline btn-lg'
+        : variant === 'ghost'
+          ? 'btn btn-ghost btn-lg'
+          : 'btn btn-gold btn-lg';
+---
+
+<section class:list={['hero', `hero--${align}`]}>
+  {/* 바다/야자수 모티프 장식 */}
+  <div class="hero__decor" aria-hidden="true">
+    {/* 왼쪽 위 야자수 잎 */}
+    <svg class="palm palm--left" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+        <path d="M100 190 C100 140, 100 100, 100 60" />
+        <path d="M100 60 C70 40, 40 35, 10 45" />
+        <path d="M100 60 C75 30, 55 15, 30 5" />
+        <path d="M100 60 C100 25, 100 10, 100 -5" />
+        <path d="M100 60 C125 30, 145 15, 170 5" />
+        <path d="M100 60 C130 40, 160 35, 190 45" />
+      </g>
+    </svg>
+    {/* 오른쪽 위 야자수 잎 */}
+    <svg class="palm palm--right" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+        <path d="M100 190 C100 140, 100 100, 100 60" />
+        <path d="M100 60 C70 40, 40 35, 10 45" />
+        <path d="M100 60 C75 30, 55 15, 30 5" />
+        <path d="M100 60 C100 25, 100 10, 100 -5" />
+        <path d="M100 60 C125 30, 145 15, 170 5" />
+        <path d="M100 60 C130 40, 160 35, 190 45" />
+      </g>
+    </svg>
+    {/* 하단 파도 */}
+    <svg class="waves" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,60 C180,100 360,20 540,50 C720,80 900,30 1080,55 C1260,80 1380,40 1440,50 L1440,120 L0,120 Z" opacity="0.30" />
+      <path d="M0,80 C200,110 400,50 600,75 C800,100 1000,55 1200,80 C1340,95 1400,70 1440,80 L1440,120 L0,120 Z" opacity="0.50" />
+    </svg>
+  </div>
+
+  <div class="hero__badge">
+    <span class="dot"></span>
+    {badge}
+  </div>
+  <h1 class="hero__title">
+    {title}{highlight && <> <span class="summer-text">{highlight}</span></>}
+  </h1>
+  <p class="hero__subtitle">{subtitle}</p>
+
+  {ctas.length > 0 && (
+    <div class="hero__cta">
+      {ctas.map((cta) => (
+        <a
+          href={cta.href}
+          class={btnClass(cta.variant ?? 'gold')}
+          {...(cta.external ? { target: '_blank', rel: 'noopener' } : {})}
+        >
+          {cta.label}
+        </a>
+      ))}
+    </div>
+  )}
+
+  {meta.length > 0 && (
+    <div class="hero__meta">
+      {meta.map((m, i) => (
+        <span>
+          {i > 0 && <span class="meta-dot">·</span>} {m}
+        </span>
+      ))}
+    </div>
+  )}
+</section>
+
+<style>
+  .hero__decor {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .palm {
+    position: absolute;
+    top: -10px;
+    width: 150px;
+    height: 150px;
+    color: var(--color-palm);
+    opacity: 0.45;
+    animation: sway 6s ease-in-out infinite;
+    transform-origin: bottom center;
+  }
+  .palm--left {
+    left: 2%;
+    transform: scaleX(1) rotate(-8deg);
+  }
+  .palm--right {
+    right: 2%;
+    transform: scaleX(-1) rotate(-8deg);
+    color: var(--color-ocean);
+    opacity: 0.35;
+    animation-delay: -3s;
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(2deg); }
+  }
+  .palm--right { animation-name: swayRight; }
+  @keyframes swayRight {
+    0%, 100% { transform: scaleX(-1) rotate(-8deg); }
+    50% { transform: scaleX(-1) rotate(2deg); }
+  }
+  .waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    color: var(--color-ocean);
+    opacity: 0.5;
+  }
+  .waves path { fill: currentColor; }
+
+  .hero__decor ~ .hero__badge,
+  .hero__decor ~ .hero__title,
+  .hero__decor ~ .hero__subtitle,
+  .hero__decor ~ .hero__cta,
+  .hero__decor ~ .hero__meta {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero--left {
+    text-align: left;
+    padding: 48px 0 40px;
+  }
+  .hero--left .hero__title,
+  .hero--left .hero__subtitle {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+  .hero--left .hero__title { max-width: 760px; font-size: 2.3rem; }
+  .hero--left .hero__badge,
+  .hero--left .hero__cta,
+  .hero--left .hero__meta { justify-content: flex-start; }
+  .hero--left .hero__cta { margin-top: 28px; }
+
+  @media (max-width: 768px) {
+    .hero--left .hero__title { font-size: 1.8rem; }
+    .palm { width: 95px; height: 95px; opacity: 0.3; }
+    .waves { height: 60px; opacity: 0.35; }
+  }
+</style>

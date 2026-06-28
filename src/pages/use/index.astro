@@ -5,6 +5,7 @@
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Hero from '../../components/Hero.astro';
 import { getAllUseCases } from '../../lib/data';
 import { webPageSchema, breadcrumbSchema } from '../../lib/schema';
 
@@ -30,14 +31,13 @@ const schemas = [
   <div class="container container-narrow">
     <Breadcrumbs items={breadcrumbs} />
 
-    <section style="padding: 24px 0 32px;">
-      <h1 style="font-size: 2rem; font-weight: 800; line-height: 1.35; margin-bottom: 14px;">
-        이용 장소별 안내
-      </h1>
-      <p style="color: var(--color-text-soft); font-size: 1.05rem;">
-        이용하시는 장소에 따라 확인해야 할 사항이 다릅니다. 해당 장소의 출입 방식과 주의사항을 미리 확인하세요.
-      </p>
-    </section>
+    <Hero
+      align="left"
+      badge="이용 장소별 안내 · 출장마사지"
+      title="이용 장소별"
+      highlight="출입 방식 안내"
+      subtitle="이용하시는 장소에 따라 확인해야 할 사항이 다릅니다. 해당 장소의 출입 방식과 주의사항을 미리 확인하세요."
+    />
 
     <section class="section-sm">
       <div class="card-grid">

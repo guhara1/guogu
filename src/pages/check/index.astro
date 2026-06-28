@@ -5,6 +5,7 @@
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Hero from '../../components/Hero.astro';
 import Checklist from '../../components/Checklist.astro';
 import PriceTable from '../../components/PriceTable.astro';
 import { webPageSchema, breadcrumbSchema } from '../../lib/schema';
@@ -29,14 +30,13 @@ const schemas = [
   <div class="container container-narrow">
     <Breadcrumbs items={breadcrumbs} />
 
-    <section style="padding: 24px 0 32px;">
-      <h1 style="font-size: 2rem; font-weight: 800; line-height: 1.35; margin-bottom: 14px;">
-        출장마사지 예약 전 확인사항
-      </h1>
-      <p style="color: var(--color-text-soft); font-size: 1.05rem;">
-        예약 전에 반드시 확인해야 할 항목을 정리했습니다. 원활한 방문을 위해 아래 항목을 미리 점검해 주세요.
-      </p>
-    </section>
+    <Hero
+      align="left"
+      badge="예약 전 확인 · 출장마사지"
+      title="출장마사지"
+      highlight="예약 전 확인사항"
+      subtitle="예약 전에 반드시 확인해야 할 항목을 정리했습니다. 원활한 방문을 위해 아래 항목을 미리 점검해 주세요."
+    />
 
     <section class="section-sm">
       <Checklist title="예약 전 반드시 확인할 내용" />

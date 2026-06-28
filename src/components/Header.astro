@@ -1,7 +1,7 @@
 ---
 /**
- * 사이트 헤더 / 네비게이션
- * 상호: X 킹마사지, 전화예약 버튼 포함
+ * 사이트 헤더 / 네비게이션 — 간다GO
+ * 상호: 간다GO, 전화예약 버튼 + 모바일 햄버거 메뉴 지원
  */
 import { siteConfig } from '../data/site';
 ---
@@ -9,8 +9,8 @@ import { siteConfig } from '../data/site';
 <header class="site-header">
   <div class="container site-header__inner">
     <a href="/" class="site-header__logo">
-      <span class="badge-x">X</span>
-      <span><span class="gold-text">킹</span>마사지</span>
+      <span class="badge-x">G</span>
+      <span><span class="gold-text">간다</span>GO</span>
     </a>
     <nav class="site-nav" aria-label="주요 메뉴">
       <a href="/seoul/">서울</a>
@@ -24,5 +24,52 @@ import { siteConfig } from '../data/site';
         </a>
       )}
     </nav>
+    <button
+      type="button"
+      class="menu-toggle"
+      aria-label="메뉴 열기"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      id="menuToggle"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="모바일 메뉴">
+  <a href="/seoul/">서울</a>
+  <a href="/gyeonggi/">경기</a>
+  <a href="/incheon/">인천</a>
+  <a href="/life/">생활권</a>
+  <a href="/use/">이용 장소별 안내</a>
+  <a href="/check/">예약 전 확인</a>
+  <a href="/about/">사이트 소개</a>
+  <a href="/contact/">고객센터</a>
+  {siteConfig.phoneTel && (
+    <a href={`tel:${siteConfig.phoneTel}`} class="is-cta">
+      📞 전화예약 {siteConfig.phoneDisplay}
+    </a>
+  )}
+</nav>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mobile-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

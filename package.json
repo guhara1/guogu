@@ -1,8 +1,8 @@
 {
-  "name": "sudogwon-massage",
+  "name": "gandago-massage",
   "type": "module",
-  "version": "1.0.0",
-  "description": "서울·경기·인천 수도권 출장마사지 방문 가능 지역 안내 사이트",
+  "version": "2.0.0",
+  "description": "간다GO - 서울·경기·인천 수도권 출장마사지 방문 가능 지역 안내 사이트 (바다/야자수 서머 테마)",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

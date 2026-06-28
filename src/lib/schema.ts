@@ -33,10 +33,24 @@ export function webPageSchema(
     url: absUrl(path),
     name: title,
     description,
+    inLanguage: 'ko-KR',
     isPartOf: {
       '@type': 'WebSite',
       name: siteConfig.name,
       url: siteConfig.url,
+    },
+    author: siteConfig.author
+      ? {
+          '@type': 'Person',
+          name: siteConfig.author.name,
+          ...(siteConfig.author.url ? { url: absUrl(siteConfig.author.url) } : {}),
+          ...(siteConfig.author.jobTitle ? { jobTitle: siteConfig.author.jobTitle } : {}),
+        }
+      : undefined,
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.organization.name,
+      url: siteConfig.organization.url,
     },
     breadcrumb: breadcrumbs
       ? {
@@ -67,7 +81,7 @@ export function breadcrumbSchema(items: BreadcrumbItem[]) {
 }
 
 /** Organization 스키마 (오프라인 매장 없음 → LocalBusiness 사용 안 함)
- *  contactPoint 로 전화예약 번호 노출 */
+ *  contactPoint 로 전화예약 번호 노출, founder로 E-E-A'T 보강 */
 export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
@@ -75,6 +89,15 @@ export function organizationSchema() {
     name: siteConfig.organization.name,
     url: siteConfig.organization.url,
     description: siteConfig.organization.description,
+    ...(siteConfig.author
+      ? {
+          founder: {
+            '@type': 'Person',
+            name: siteConfig.author.name,
+            ...(siteConfig.author.url ? { url: absUrl(siteConfig.author.url) } : {}),
+          },
+        }
+      : {}),
     ...(siteConfig.phoneTel
       ? {
           contactPoint: {
@@ -89,14 +112,17 @@ export function organizationSchema() {
   };
 }
 
-/** ImageObject 스키마 */
+/** ImageObject 스키마 — 선호 이미지 지정 (Google 2026.3 정책: og:image + schema 동시) */
 export function imageObjectSchema(imageUrl: string, caption?: string) {
+  const abs = imageUrl.startsWith('http') ? imageUrl : absUrl(imageUrl);
   return {
     '@context': 'https://schema.org',
     '@type': 'ImageObject',
-    url: absUrl(imageUrl),
-    contentUrl: absUrl(imageUrl),
+    url: abs,
+    contentUrl: abs,
     caption: caption || siteConfig.description,
+    width: { '@type': 'QuantitativeValue', unitText: 'px', value: 1200 },
+    height: { '@type': 'QuantitativeValue', unitText: 'px', value: 630 },
   };
 }
 

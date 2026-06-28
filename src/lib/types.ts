@@ -148,6 +148,12 @@ export interface SiteConfig {
   phone?: string;          // 표시용 (예: 0508-202-4719)
   phoneDisplay?: string;   // UI 표시용
   phoneTel?: string;       // tel: 링크용 (하이픈 제거)
+  telegram?: string;       // 텔레그램 링크 (제작문의/제휴문의)
+  author?: {               // E-E-A'T byline (작성자/책임자 정보)
+    name: string;
+    url?: string;
+    jobTitle?: string;
+  };
   organization: {
     name: string;
     url: string;
@@ -160,4 +166,12 @@ export interface SiteConfig {
 export interface BreadcrumbItem {
   name: string;
   url: string;
+}
+
+/** 히어로/CTA 버튼 항목 */
+export interface CTA {
+  label: string;
+  href: string;
+  variant?: 'gold' | 'mint' | 'outline' | 'ghost'; // 미지정 시 gold
+  external?: boolean; // 외부 링크(새창) 여부
 }

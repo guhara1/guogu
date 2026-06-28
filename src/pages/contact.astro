@@ -5,6 +5,7 @@
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Hero from '../components/Hero.astro';
 import { webPageSchema, breadcrumbSchema } from '../lib/schema';
 
 const path = '/contact/';
@@ -27,15 +28,13 @@ const schemas = [
   <div class="container container-narrow">
     <Breadcrumbs items={breadcrumbs} />
 
-    <section style="padding: 24px 0 32px;">
-      <h1 style="font-size: 2rem; font-weight: 800; line-height: 1.35; margin-bottom: 14px;">
-        고객센터
-      </h1>
-      <p style="color: var(--color-text-soft); font-size: 1.05rem;">
-        예약 문의 및 안내가 필요한 경우 아래 내용을 확인해 주세요.
-        문의 전 <a href="/check/">예약 전 확인사항</a>을 먼저 읽어주시면 원활한 안내에 도움이 됩니다.
-      </p>
-    </section>
+    <Hero
+      align="left"
+      badge="고객센터 · 예약 문의"
+      title="고객센터"
+      highlight="예약 문의 안내"
+      subtitle="예약 문의 및 안내가 필요한 경우 아래 내용을 확인해 주세요. 문의 전 예약 전 확인사항을 먼저 읽어주시면 원활한 안내에 도움이 됩니다."
+    />
 
     <section class="section-sm">
       <div class="card-grid">

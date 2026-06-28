@@ -1,16 +1,16 @@
 import type { SiteConfig } from '../lib/types';
 
 /**
- * 사이트 전역 설정
- * - 상호: X 킹마사지
+ * 사이트 전역 설정 — 간다GO (새 사이트)
+ * - 상호: 간다GO
  * - 전화예약: 0508-202-4719
  * - 디스크립션: 80자 이내
  */
 export const siteConfig: SiteConfig = {
-  name: 'X 킹마사지',
+  name: '간다GO',
   // astro.config.mjs 의 SITE_URL과 동일하게 유지
-  url: 'https://zxking-massage.pages.dev',
-  title: 'X 킹마사지｜수도권 출장마사지·홈타이 방문 가능 지역 안내',
+  url: 'https://guogu.pages.dev',
+  title: '간다GO｜수도권 출장마사지·홈타이 방문 가능 지역 안내',
   // 80자 이내 디스크립션
   description:
     '수도권 출장마사지·홈타이. 강남·송도·수원·분당 방문 가능 지역과 예약 전 확인사항 안내.',
@@ -25,31 +25,48 @@ export const siteConfig: SiteConfig = {
     '경기 홈타이',
     '인천 홈타이',
     '강남 출장마사지',
+    '강남역 방문 마사지',
+    '역삼 출장마사지',
     '잠실 출장마사지',
     '홍대 출장마사지',
     '여의도 출장마사지',
+    '성수 출장마사지',
     '수원 출장마사지',
+    '수원역 홈타이',
     '분당 출장마사지',
+    '판교 출장마사지',
     '용인 출장마사지',
+    '동탄 출장마사지',
     '부천 출장마사지',
     '안산 출장마사지',
     '안양 출장마사지',
     '일산 출장마사지',
-    '동탄 출장마사지',
     '의정부 출장마사지',
     '송도 출장마사지',
+    '송도국제도시 홈타이',
     '부평 출장마사지',
     '구월 출장마사지',
     '청라 출장마사지',
     '검단 출장마사지',
+    '방문 마사지 예약 전 확인',
+    '호텔 출장마사지',
+    '오피스텔 방문 마사지',
   ],
   // 전화예약 정보
   phone: '0508-202-4719',
   phoneDisplay: '0508-202-4719',
   phoneTel: '05082024719',
+  // 텔레그램 문의 링크 (임시 — 웹사이트 제작문의/제휴문의 공통)
+  telegram: 'https://t.me/andlego',
+  // E-E-A'T 작성자 byline (Google 가이드라인 준수)
+  author: {
+    name: '간다GO 편집팀',
+    url: 'https://guogu.pages.dev/about/',
+    jobTitle: '출장 마사지 방문 가능 지역 안내 에디터',
+  },
   organization: {
-    name: 'X 킹마사지',
-    url: 'https://zxking-massage.pages.dev',
+    name: '간다GO',
+    url: 'https://guogu.pages.dev',
     description:
       '수도권 출장마사지·홈타이 방문 가능 지역과 예약 전 확인사항을 안내합니다.',
   },
