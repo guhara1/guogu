@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="55%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="55%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fcd34d"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+
+  <!-- 태양 글로우 (우상단) -->
+  <circle cx="1020" cy="180" r="300" fill="url(#sun)" opacity="0.7"/>
+  <circle cx="1020" cy="180" r="100" fill="#fcd34d" opacity="0.9"/>
+
+  <!-- 왼쪽 야자수 -->
+  <g transform="translate(40,60)" stroke="#10b981" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M90 700 C90 480, 90 330, 90 210"/>
+    <path d="M90 210 C40 140, -10 110, -60 120"/>
+    <path d="M90 210 C55 110, 30 55, 0 0"/>
+    <path d="M90 210 C90 95, 90 40, 90 -25"/>
+    <path d="M90 210 C125 110, 150 55, 185 0"/>
+    <path d="M90 210 C140 140, 190 110, 240 120"/>
+  </g>
+
+  <!-- 오른쪽 야자수 -->
+  <g transform="translate(960,40)" stroke="#0ea5e9" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.42">
+    <path d="M90 700 C90 480, 90 330, 90 210"/>
+    <path d="M90 210 C40 140, -10 110, -60 120"/>
+    <path d="M90 210 C55 110, 30 55, 0 0"/>
+    <path d="M90 210 C90 95, 90 40, 90 -25"/>
+    <path d="M90 210 C125 110, 150 55, 185 0"/>
+    <path d="M90 210 C140 140, 190 110, 240 120"/>
+  </g>
+
+  <!-- 하단 파도 -->
+  <path d="M0 1060 C250 1030, 500 1090, 750 1055 C950 1025, 1100 1080, 1200 1050 L1200 1200 L0 1200 Z" fill="#0ea5e9" opacity="0.22"/>
+  <path d="M0 1110 C250 1080, 500 1140, 750 1105 C950 1075, 1100 1130, 1200 1100 L1200 1200 L0 1200 Z" fill="#0284c7" opacity="0.32"/>
+
+  <!-- 중앙 콘텐츠 그룹 -->
+  <!-- 로고 뱃지 (중앙 상단) -->
+  <rect x="510" y="280" width="180" height="180" rx="42" fill="url(#oceanGrad)"/>
+  <text x="600" y="412" font-family="Pretendard, Arial, sans-serif" font-size="118" font-weight="900" fill="#ffffff" text-anchor="middle">G</text>
+
+  <!-- 브랜드명 -->
+  <text x="600" y="555" font-family="Pretendard, Arial, sans-serif" font-size="64" font-weight="800" fill="#0f2a3f" text-anchor="middle">간다GO</text>
+
+  <!-- 메인 타이틀 -->
+  <text x="600" y="680" font-family="Pretendard, Arial, sans-serif" font-size="72" font-weight="900" fill="#0f2a3f" letter-spacing="-2" text-anchor="middle">수도권 출장마사지</text>
+
+  <!-- 서브 타이틀 -->
+  <text x="600" y="760" font-family="Pretendard, Arial, sans-serif" font-size="44" font-weight="800" fill="#0284c7" text-anchor="middle">방문 가능 지역 안내</text>
+
+  <!-- 하단 칩들 -->
+  <rect x="370" y="830" width="210" height="46" rx="23" fill="#ffffff" stroke="#bae6fd" stroke-width="1.5"/>
+  <text x="475" y="861" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="700" fill="#0284c7" text-anchor="middle">🌊 바다 서머 테마</text>
+
+  <rect x="620" y="830" width="210" height="46" rx="23" fill="#ffe5e5" stroke="#fecaca" stroke-width="1.5"/>
+  <text x="725" y="861" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="700" fill="#e85555" text-anchor="middle">전화예약 안내</text>
+</svg>

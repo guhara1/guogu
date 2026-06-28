@@ -24,7 +24,8 @@ const { title, description, path, noindex = false, schemas = [] } = Astro.props;
 
 const canonical = absUrl(path);
 // OG 이미지: 50KB 이하 WebP (검색 썸네일 최적화)
-const ogImage = absUrl('/og-image.webp');
+const ogImage = absUrl('/og-image.webp');                 // 가로형 1200×630 (카톡/트위터 공유)
+const ogImageSquare = absUrl('/og-image-square.webp');    // 정사각형 1200×1200 (구글/네이버 검색 카드)
 const keywords = [siteConfig.focusKeyword, ...siteConfig.subKeywords].join(', ');
 ---
 
@@ -50,18 +51,28 @@ const keywords = [siteConfig.focusKeyword, ...siteConfig.subKeywords].join(', ')
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:locale" content="ko_KR" />
+{/* 가로형 (카톡/트위터/페이스북 공유) */}
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:secure_url" content={ogImage} />
 <meta property="og:image:type" content="image/webp" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content={`${siteConfig.name} - 수도권 출장마사지 방문 가능 지역 안내`} />
+{/* 정사각형 (구글/네이버 검색결과 우측 카드) */}
+<meta property="og:image" content={ogImageSquare} />
+<meta property="og:image:secure_url" content={ogImageSquare} />
+<meta property="og:image:type" content="image/webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1200" />
+<meta property="og:image:alt" content={`${siteConfig.name} - 수도권 출장마사지`} />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+{/* 정사각형 썸네일 (검색엔진 크롤러용 선호 이미지) */}
+<meta name="thumbnail" content={ogImageSquare} />
 
 <!-- JSON-LD 구조화 데이터 -->
 {schemas.map((schema) => (
