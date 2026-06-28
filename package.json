@@ -8,7 +8,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "indexnow": "node scripts/indexnow.cjs",
+    "deploy": "astro build && node scripts/indexnow.cjs"
   },
   "engines": {
     "node": ">=18.14.1"
