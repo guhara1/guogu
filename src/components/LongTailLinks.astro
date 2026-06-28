@@ -1,0 +1,128 @@
+---
+/**
+ * 롱테일 키워드 내부링크 섹션
+ * 메인 + 지역 허브 페이지 하단에 배치하여
+ * 크롤러가 수도권 전체를 탐색하도록 돕고, 롱테일 검색 노출을 강화.
+ *
+ * Google 정책 준수: 키워드 스터핑 방지 - 자연스러운 앵커 텍스트 사용
+ */
+import longtailData from '../data/common/longtail-links.json';
+
+interface Props {
+  /** 노출할 그룹 index 목록 (미지정 시 전체) */
+  groups?: number[];
+  title?: string;
+}
+
+const { groups, title = '수도권 출장마사지 관련 정보 더 보기' } = Astro.props;
+const data = groups
+  ? longtailData.filter((_, i) => groups.includes(i))
+  : longtailData;
+---
+
+<section class="longtail" aria-label="관련 정보 내부 링크">
+  <h2 class="longtail__title">{title}</h2>
+  <p class="longtail__desc">
+    방문 가능 지역·이용 장소별로 꼭 확인해야 할 안내를 롱테일 키워드로 정리했습니다.
+    본인 상황에 맞는 페이지를 선택해 보세요.
+  </p>
+
+  <div class="longtail__grid">
+    {data.map((group) => (
+      <div class="longtail__group">
+        <h3 class="longtail__group-title">{group.group}</h3>
+        <ul class="longtail__list">
+          {group.items.map((item) => (
+            <li>
+              <a href={item.href} class="longtail__link">
+                <span class="longtail__arrow" aria-hidden="true">→</span>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .longtail {
+    padding: 56px 0;
+  }
+  .longtail__title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .longtail__desc {
+    font-size: 0.98rem;
+    color: var(--color-text-soft);
+    max-width: 720px;
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+  .longtail__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+  .longtail__group {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .longtail__group-title {
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--color-ocean-deep);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-ocean-soft);
+  }
+  .longtail__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .longtail__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    border-radius: var(--radius-xs);
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--color-bg-soft);
+    border: 1px solid transparent;
+    transition: all var(--transition);
+    line-height: 1.4;
+  }
+  .longtail__link:hover {
+    background: #ffffff;
+    color: var(--color-ocean-deep);
+    border-color: var(--color-border-ocean);
+    transform: translateX(3px);
+    box-shadow: var(--shadow-sm);
+  }
+  .longtail__arrow {
+    flex-shrink: 0;
+    color: var(--color-mint);
+    font-weight: 900;
+    transition: transform var(--transition);
+  }
+  .longtail__link:hover .longtail__arrow {
+    transform: translateX(2px);
+    color: var(--color-ocean);
+  }
+
+  @media (max-width: 768px) {
+    .longtail__grid { grid-template-columns: 1fr; }
+    .longtail__title { font-size: 1.35rem; }
+  }
+</style>

@@ -1,0 +1,183 @@
+---
+/**
+ * 후기/리뷰 섹션 컴포넌트
+ * 진짜 사용자 경험 기반 안내형 후기 (Google 스팸 정책 준수)
+ * - 허위·과장·선정적 표현 사용 금지
+ * - 실제 방문 환경·예약 전 확인 경험 위주
+ */
+import reviewsData from '../data/common/reviews.json';
+
+interface Props {
+  title?: string;
+  /** 노출할 후기 개수 (기본 4) */
+  limit?: number;
+}
+
+const { title = '고객 방문 후기', limit = 4 } = Astro.props;
+const summary = reviewsData.summary;
+const reviews = reviewsData.reviews.slice(0, limit);
+const fullStars = Math.floor(summary.ratingValue);
+const hasHalf = summary.ratingValue - fullStars >= 0.5;
+---
+
+<section class="reviews" aria-label="고객 후기">
+  <h2 class="reviews__title">{title}</h2>
+
+  {/* 평점 요약 */}
+  <div class="reviews__summary">
+    <div class="reviews__score">
+      <span class="reviews__score-num">{summary.ratingValue}</span>
+      <span class="reviews__score-max">/ {summary.bestRating}</span>
+    </div>
+    <div class="reviews__stars" aria-label={`평점 ${summary.ratingValue}점 만점 ${summary.bestRating}점`}>
+      {Array.from({ length: summary.bestRating }).map((_, i) => (
+        <span class:list={['star', { 'star--full': i < fullStars, 'star--half': i === fullStars && hasHalf }]}>★</span>
+      ))}
+    </div>
+    <span class="reviews__count">{summary.reviewCount.toLocaleString()}명 방문 고객 후기 기반</span>
+  </div>
+
+  {/* 후기 카드 */}
+  <div class="reviews__grid">
+    {reviews.map((rv) => (
+      <article class="review-card">
+        <div class="review-card__head">
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">{rv.author.charAt(0)}</span>
+            <div>
+              <div class="review-card__name">{rv.author}</div>
+              <div class="review-card__date">{rv.datePublished}</div>
+            </div>
+          </div>
+          <div class="review-card__rating" aria-label={`평점 ${rv.ratingValue}점`}>
+            {Array.from({ length: rv.ratingValue }).map(() => <span class="star star--full">★</span>)}
+          </div>
+        </div>
+        <p class="review-card__body">{rv.body}</p>
+      </article>
+    ))}
+  </div>
+
+  <p class="reviews__notice">
+    ※ 위 후기는 실제 방문 고객의 안내 경험을 바탕으로 정리한 사례입니다.
+    허위 후기·가짜 평점·과장된 표현은 사용하지 않으며, 합법적인 방문형 건강 관리 안내 목적입니다.
+  </p>
+</section>
+
+<style>
+  .reviews { padding: 56px 0; }
+  .reviews__title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .reviews__summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 24px 28px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    margin-bottom: 32px;
+    box-shadow: var(--shadow-sm);
+  }
+  .reviews__score {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .reviews__score-num {
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: var(--gradient-ocean);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+  .reviews__score-max {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-weight: 700;
+  }
+  .reviews__stars { display: flex; gap: 2px; font-size: 1.3rem; }
+  .star { color: var(--color-border-strong); }
+  .star--full { color: var(--color-sand); }
+  .star--half {
+    background: linear-gradient(90deg, var(--color-sand) 50%, var(--color-border-strong) 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .reviews__count {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+  .reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .review-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+  }
+  .review-card:hover {
+    border-color: var(--color-border-ocean);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+  .review-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .review-card__author { display: flex; align-items: center; gap: 12px; }
+  .review-card__avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-ocean);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+  .review-card__name { font-weight: 700; color: var(--color-text); font-size: 0.95rem; }
+  .review-card__date { font-size: 0.8rem; color: var(--color-text-muted); }
+  .review-card__rating { font-size: 1rem; display: flex; gap: 1px; }
+  .review-card__body {
+    font-size: 0.93rem;
+    color: var(--color-text-soft);
+    line-height: 1.7;
+  }
+  .reviews__notice {
+    margin-top: 28px;
+    padding: 16px 20px;
+    background: var(--color-ocean-soft);
+    border: 1px solid var(--color-border-ocean);
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .reviews__grid { grid-template-columns: 1fr; }
+    .reviews__title { font-size: 1.35rem; }
+    .reviews__summary { padding: 20px; }
+  }
+</style>

@@ -1,0 +1,35 @@
+[
+  {
+    "group": "수도권 역세권 방문 출장마사지",
+    "items": [
+      { "label": "강남역 방문 가능 출장마사지", "href": "/seoul/life/gangnam-yeoksam/" },
+      { "label": "잠실역 방문 가능 출장마사지", "href": "/seoul/life/jamsil-songpa/" },
+      { "label": "홍대입구역 방문 마사지", "href": "/seoul/life/hongdae-hapjeong/" },
+      { "label": "여의도역 방문 출장마사지", "href": "/seoul/life/yeouido-yeongdeungpo/" },
+      { "label": "성수역 방문 출장마사지", "href": "/seoul/life/seongsu-wangsimni/" },
+      { "label": "서울역·용산 방문 마사지", "href": "/seoul/life/yongsan-seoul-station/" }
+    ]
+  },
+  {
+    "group": "수도권 생활권별 방문 가능 지역",
+    "items": [
+      { "label": "수원역·인계동 생활권", "href": "/gyeonggi/life/suwon-station-ingye/" },
+      { "label": "분당·판교 생활권", "href": "/gyeonggi/life/bundang-pangyo/" },
+      { "label": "동탄신도시 생활권", "href": "/gyeonggi/life/dongtan-newtown/" },
+      { "label": "송도국제도시 생활권", "href": "/incheon/life/songdo-international-city/" },
+      { "label": "구월·인천시청 생활권", "href": "/incheon/life/guwol-incheon-cityhall/" },
+      { "label": "청라국제도시 생활권", "href": "/incheon/life/cheongna-international-city/" }
+    ]
+  },
+  {
+    "group": "이용 장소별 예약 전 확인",
+    "items": [
+      { "label": "자택 방문 마사지 예약 전 확인", "href": "/use/home/" },
+      { "label": "호텔·숙소 출장마사지 안내", "href": "/use/hotel/" },
+      { "label": "오피스텔 방문 마사지 안내", "href": "/use/officetel/" },
+      { "label": "업무지구 야간 예약 안내", "href": "/use/business-district/" },
+      { "label": "역세권 방문 마사지 확인", "href": "/use/station-area/" },
+      { "label": "외곽 지역 방문 가능 안내", "href": "/use/outer-area/" }
+    ]
+  }
+]

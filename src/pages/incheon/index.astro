@@ -9,8 +9,11 @@ import Hero from '../../components/Hero.astro';
 import Checklist from '../../components/Checklist.astro';
 import PhoneCTA from '../../components/PhoneCTA.astro';
 import PriceTable from '../../components/PriceTable.astro';
+import LongTailLinks from '../../components/LongTailLinks.astro';
+import Reviews from '../../components/Reviews.astro';
 import { getDistricts, getReadyLifeAreas } from '../../lib/data';
-import { webPageSchema, breadcrumbSchema, imageObjectSchema } from '../../lib/schema';
+import reviewsData from '../../data/common/reviews.json';
+import { webPageSchema, breadcrumbSchema, imageObjectSchema, serviceSchema } from '../../lib/schema';
 
 const path = '/incheon/';
 const title = '인천 출장마사지｜8구 2군 방문 가능 지역 안내';
@@ -29,6 +32,13 @@ const schemas = [
   breadcrumbSchema(breadcrumbs),
   webPageSchema(path, title, description, breadcrumbs),
   imageObjectSchema('/og-image-square.webp', `${title}`),
+  serviceSchema({
+    name: `${title}`,
+    description,
+    ratingValue: reviewsData.summary.ratingValue,
+    reviewCount: reviewsData.summary.reviewCount,
+    areaServed: ['인천'],
+  }),
 ];
 ---
 
@@ -100,6 +110,12 @@ const schemas = [
     <section class="section" style="border-top: 1px solid var(--color-border);">
       <Checklist />
     </section>
+
+    {/* 고객 방문 후기 */}
+    <Reviews limit={3} title="인천 방문 고객 후기" />
+
+    {/* 롱테일 키워드 내부링크 */}
+    <LongTailLinks groups={[1, 2]} title="인천 출장마사지 관련 정보 더 보기" />
 
   </div>
 </BaseLayout>

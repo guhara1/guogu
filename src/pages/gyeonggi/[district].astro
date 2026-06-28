@@ -10,6 +10,7 @@ import DistrictNav from '../../components/DistrictNav.astro';
 import Checklist from '../../components/Checklist.astro';
 import PriceTable from '../../components/PriceTable.astro';
 import PhoneCTA from '../../components/PhoneCTA.astro';
+import LongTailLinks from '../../components/LongTailLinks.astro';
 import {
   getDistricts,
   findLifeAreaBySlug,
@@ -252,6 +253,9 @@ const schemas = [
         ))}
       </div>
     </section>
+
+    {/* 롱테일 키워드 내부링크 */}
+    <LongTailLinks groups={[1, 2]} title={`${district.name} 출장마사지 관련 정보 더 보기`} />
 
   </div>
 </BaseLayout>

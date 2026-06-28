@@ -11,14 +11,19 @@ import RegionCard from '../components/RegionCard.astro';
 import LifeAreaCard from '../components/LifeAreaCard.astro';
 import PhoneCTA from '../components/PhoneCTA.astro';
 import PriceTable from '../components/PriceTable.astro';
+import LongTailLinks from '../components/LongTailLinks.astro';
+import Reviews from '../components/Reviews.astro';
 import { siteConfig } from '../data/site';
 import { getReadyLifeAreas, getAllUseCases } from '../lib/data';
+import reviewsData from '../data/common/reviews.json';
 import {
   webPageSchema,
   breadcrumbSchema,
   organizationSchema,
   webSiteSchema,
   imageObjectSchema,
+  serviceSchema,
+  reviewSchema,
 } from '../lib/schema';
 
 const path = '/';
@@ -37,12 +42,24 @@ const breadcrumbs = [
   { name: '수도권 출장마사지', url: '/' },
 ];
 
+// 리뷰 스키마 (진짜 후기 기반)
+const reviewSchemas = reviewsData.reviews.slice(0, 4).map((rv) =>
+  reviewSchema(rv.author, rv.ratingValue, rv.body, rv.datePublished)
+);
+
 const schemas = [
   organizationSchema(),
   webSiteSchema(),
   breadcrumbSchema(breadcrumbs),
   webPageSchema(path, title, description, breadcrumbs),
   imageObjectSchema('/og-image-square.webp', `${siteConfig.name} - 수도권 출장마사지 방문 가능 지역 안내`),
+  serviceSchema({
+    name: `${siteConfig.name} 수도권 출장마사지 방문 가능 지역 안내`,
+    description: siteConfig.organization.description,
+    ratingValue: reviewsData.summary.ratingValue,
+    reviewCount: reviewsData.summary.reviewCount,
+    reviews: reviewSchemas,
+  }),
 ];
 ---
 
@@ -210,6 +227,13 @@ const schemas = [
     <hr class="divider" />
 
     {/* ============================================
+        Section 5. 고객 방문 후기 (리뷰/평점)
+        ============================================ */}
+    <Reviews limit={4} />
+
+    <hr class="divider" />
+
+    {/* ============================================
         Section 5. Google 가이드라인 준수형 운영 기준
         ============================================ */}
     <section class="section">
@@ -234,6 +258,13 @@ const schemas = [
         </div>
       </div>
     </section>
+
+    <hr class="divider" />
+
+    {/* ============================================
+        Section 7. 롱테일 키워드 내부링크
+        ============================================ */}
+    <LongTailLinks />
 
   </div>
 </BaseLayout>

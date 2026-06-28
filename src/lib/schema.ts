@@ -149,6 +149,81 @@ export function buildSchemaGraph(schemas: object[]): object[] {
 }
 
 /**
+ * 집계 평점 스키마 (AggregateRating)
+ * - 진짜 후기 기반이어야 함 (Google 스팸 정책 준수)
+ * - 가짜 점수/허위 후기 금지 → 실제 안내 기반의 신뢰 지표로만 사용
+ */
+export function aggregateRatingSchema(
+  ratingValue: number,
+  reviewCount: number,
+  bestRating = 5,
+  worstRating = 1
+) {
+  return {
+    '@type': 'AggregateRating',
+    ratingValue: String(ratingValue),
+    reviewCount: String(reviewCount),
+    bestRating: String(bestRating),
+    worstRating: String(worstRating),
+  };
+}
+
+/**
+ * 리뷰 스키마 (Review)
+ * - 실제 사용자 경험 기반 안내형 리뷰
+ * - 허위/과장 금지 (스펙 준수: 불법·선정적 표현, 가짜 후기 사용 안 함)
+ */
+export function reviewSchema(
+  author: string,
+  ratingValue: number,
+  body: string,
+  datePublished?: string
+) {
+  return {
+    '@type': 'Review',
+    author: { '@type': 'Person', name: author },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: String(ratingValue),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    ...(datePublished ? { datePublished } : {}),
+    reviewBody: body,
+  };
+}
+
+/**
+ * 서비스 스키마 (Service) — 오프라인 매장 없는 방문형 안내 서비스
+ * AggregateRating + areaServed 포함. Google 리치결과(별점) 지원.
+ */
+export function serviceSchema(opts: {
+  name: string;
+  description: string;
+  ratingValue: number;
+  reviewCount: number;
+  reviews?: ReturnType<typeof reviewSchema>[];
+  areaServed?: string[];
+}) {
+  const { name, description, ratingValue, reviewCount, reviews = [], areaServed = ['서울', '경기', '인천'] } = opts;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    serviceType: '방문형 건강 관리 안내',
+    description,
+    provider: {
+      '@type': 'Organization',
+      name: siteConfig.organization.name,
+      url: siteConfig.organization.url,
+    },
+    areaServed: areaServed.map((a) => ({ '@type': 'AdministrativeArea', name: a })),
+    aggregateRating: aggregateRatingSchema(ratingValue, reviewCount),
+    ...(reviews.length > 0 ? { hasReview: reviews } : {}),
+  };
+}
+
+/**
  * WebSite 스키마 (SearchAction 포함)
  * Google 사이트링크 검색박스 지원. 메인 페이지에서 전역으로 한 번만 노출.
  */
